@@ -7,7 +7,13 @@ on:
     branches: [ master ]
 
 jobs:
+  test1:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "test1"
+
   lint:
+    needs: test1
     runs-on: ubuntu-latest
     container: python:3
 
@@ -19,3 +25,10 @@ jobs:
 
     - name: lint yaml
       run: yamllint .
+
+  test2:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: hoge
+        run: echo "test2"
