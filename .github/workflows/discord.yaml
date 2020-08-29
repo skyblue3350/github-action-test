@@ -13,4 +13,4 @@ jobs:
     - name: Post Message
       env:
         WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-      run: 'curl -H "Content-Type: application/json" -X POST -d {"username": "もくもく会", "content": "hello"} ${WEBHOOK_URL}'
+      run: 'curl -H "Content-Type: application/json" -X POST -d {"username": "mokumoku", "content": "hello"} ${WEBHOOK_URL}'
