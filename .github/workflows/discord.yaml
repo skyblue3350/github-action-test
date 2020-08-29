@@ -1,0 +1,12 @@
+name: Moku Moku
+
+#on:
+#  schedule:
+#    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Post Message
+      run:curl -H "Content-Type: application/json" -X POST -d {"username": "もくもく会", "content": "hello"} ${{ secrets.DISCORD_WEBHOOK_URL }}
