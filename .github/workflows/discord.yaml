@@ -11,6 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Post Message
-      env:
-        WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-      run: 'curl -H "Content-Type: application/json" -X POST -d {"username": "mokumoku", "content": "hello"} ${WEBHOOK_URL}'
+      run: 'curl -H "Content-Type: application/json" -X POST -d "{\"username\": \"mokumoku\", \"content\": \"hello\"}" ${{ secrets.DISCORD_WEBHOOK_URL }}'
