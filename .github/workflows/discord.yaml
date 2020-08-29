@@ -1,6 +1,8 @@
 name: Moku Moku
 
-#on:
+on:
+  push:
+    branches: [ master ]
 #  schedule:
 #    - cron: '0 0 * * *'
 
@@ -9,4 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Post Message
-      run:curl -H "Content-Type: application/json" -X POST -d {"username": "もくもく会", "content": "hello"} ${{ secrets.DISCORD_WEBHOOK_URL }}
+      env:
+        WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      run: 'curl -H "Content-Type: application/json" -X POST -d {"username": "もくもく会", "content": "hello"} ${WEBHOOK_URL}'
