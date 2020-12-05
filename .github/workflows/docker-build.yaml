@@ -36,4 +36,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ steps.docker_meta.outputs.tags }}
+        tags: ghcr.io/${{ steps.docker_meta.outputs.tags }}
