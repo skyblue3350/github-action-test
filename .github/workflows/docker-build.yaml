@@ -22,7 +22,7 @@ jobs:
       id: docker_meta
       uses: crazy-max/ghaction-docker-meta@v1
       with:
-        images: ${{ REGISTRY }}/${{ github.repository }}
+        images: ${{ env.REGISTRY }}/${{ github.repository }}
     - name: setup qemu
       uses: docker/setup-qemu-action@v1
     - name: install buildx
